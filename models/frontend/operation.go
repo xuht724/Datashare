@@ -52,9 +52,12 @@ func UploadFile(ctx *context.Context) {
 	if uploadResult.Md5 == "" {
 		body.Status = "Failed"
 		body.Message = "Fail to upload to dfs"
+		body.Md5 = ""
 
 		var res = fmt.Sprintf("%+v", uploadResult)
 		panic(res)
+	} else {
+		body.Md5 = uploadResult.Md5
 	}
 
 	// 加载本地配置，但为了保证唯一性，考虑不加载

@@ -30,6 +30,7 @@ type GetDownloadResponseBody struct {
 type UploadToDfsResult struct {
 	Status  string `json:"status"`
 	Message string `json:"message"`
+	Md5     string `json:"md5"`
 }
 
 type DeleteRequestBody struct {
