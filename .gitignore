@@ -1,2 +1,5 @@
 *.zip
 *.json
+*.exe
+*.exe~
+*.tmp
