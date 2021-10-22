@@ -54,14 +54,11 @@ func SaveJSON(path string, JSON interface{}) error {
 	if err != nil {
 		return err
 	}
-	// 初始化配置
-	data, err := json.Marshal(JSON)
-	if err != nil {
-		return err
-	}
+
+	var jsonString = ToJSONString(JSON)
 
 	// 写入配置
-	_, err = file.Write(data)
+	_, err = file.Write([]byte(jsonString))
 
 	return err
 }

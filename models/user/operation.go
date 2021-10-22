@@ -1,7 +1,6 @@
 package user
 
 import (
-	"encoding/json"
 	"errors"
 	"goProject/models/tool"
 	"os"
@@ -29,24 +28,8 @@ param:
 */
 func InitConfig(path string, defaultConfig interface{}, config interface{}) error {
 	// 判断文件是否存在
-	if !tool.IsExists(path) { // 如果不存在
-
-		// 创建对应的文件
-		var file, err = os.Create(path)
-		defer file.Close()
-
-		if err != nil {
-			return err
-		}
-
-		// 初始化配置
-		data, err := json.Marshal(defaultConfig)
-		if err != nil {
-			return err
-		}
-
-		// 写入配置
-		file.Write(data)
+	if !tool.IsExists(path) { // 如果不存在，则进行初始化
+		tool.SaveJSON(path, defaultConfig)
 	}
 
 	// 加载配置文件
