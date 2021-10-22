@@ -72,8 +72,10 @@ func UploadFile(ctx *context.Context) {
 	// 判断文件是否是更新
 	if index := user.UserInfo.HasExist(newData); index != -1 {
 		user.UserInfo.Data[index] = newData
+		body.Message = "REPEATED"
 	} else {
 		user.UserInfo.Data = append(user.UserInfo.Data, newData)
+		body.Message = "SUCCESS"
 	}
 
 	// 保存到本地文件
@@ -85,7 +87,6 @@ func UploadFile(ctx *context.Context) {
 		body.Message = "Fail to save user information"
 	} else {
 		body.Status = "OK"
-		body.Message = "SUCCESS"
 	}
 }
 
