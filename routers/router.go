@@ -10,16 +10,16 @@ import (
 )
 
 func init() {
-	beego.Options("/uploadFile", func(ctx *context.Context) { ctx.Output.SetStatus(200) })
+	beego.Options("/file", func(ctx *context.Context) { ctx.Output.SetStatus(200) }) // 应对复杂请求
 
 	beego.Router("/", &controllers.MainController{})
 
-	beego.Get("/getDataNum", getDataNum)
-	beego.Get("/getDataList", getDataList)
+	beego.Get("/dataNum", getDataNum)
+	beego.Get("/datalist", getDataList)
 
 	beego.Post("/download", download)
-	beego.Post("/getDownloadURL", getDownloadURL)
-	beego.Post("/uploadFile", uploadFile)
+	beego.Post("/downloadURL", getDownloadURL)
+	beego.Post("/file", uploadFile)
 
 	beego.Delete("/delete", delete)
 }
