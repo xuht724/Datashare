@@ -36,6 +36,15 @@ func InitConfig(path string, defaultConfig interface{}, config interface{}) erro
 	return tool.LoadJson(path, &config)
 }
 
+/*
+判断文件是否已经存在
+
+param:
+	data Data
+
+return:
+	int
+*/
 func (user *User) HasExist(data Data) int {
 	for index, elem := range user.Data {
 		if elem.Md5 == data.Md5 {
@@ -46,6 +55,15 @@ func (user *User) HasExist(data Data) int {
 	return -1
 }
 
+/*
+删除对应的文件
+
+param:
+	md5 string 文件的哈希
+
+return:
+	error
+*/
 func (user *User) Delete(md5 string) error {
 	var index = -1
 	for i, elem := range user.Data {
@@ -61,4 +79,46 @@ func (user *User) Delete(md5 string) error {
 
 	user.Data = append(user.Data[:index], user.Data[index+1:]...)
 	return nil
+}
+
+/*
+根据类型筛选已经上传的文件
+
+param:
+	dataType uint 文件类型
+
+return:
+	[]Data
+*/
+func (user *User) GetDataByType(dataType uint) []Data {
+	var filteredData []Data = []Data{}
+
+	for _, elem := range user.Data {
+		if elem.Type == dataType {
+			filteredData = append(filteredData, elem)
+		}
+	}
+
+	return filteredData
+}
+
+/*
+根据类型获取对应的文件数量
+
+param:
+	dataType uint 数据类型
+
+return:
+	uint 文件数目
+*/
+func (user *User) GetDataNumByType(dataType uint) uint {
+	var dataNum = 0
+
+	for _, elem := range user.Data {
+		if elem.Type == dataType {
+			dataNum++
+		}
+	}
+
+	return uint(dataNum)
 }

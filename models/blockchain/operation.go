@@ -21,7 +21,7 @@ return:
 		state: true/false
 	}
 */
-func VerifyDownloadRequest(blockchainURL string, address string, target int, ip string, dataType int) VerifyResult {
+func VerifyDownloadRequest(blockchainURL string, address string, target int, ip string, dataType uint) VerifyResult {
 	var body = VerifyRequestBody{
 		Address: address,
 		Target:  target,

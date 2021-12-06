@@ -10,7 +10,7 @@ type Data struct {
 	Md5      string `json:"md5"`
 	Filename string `json:"filename"`
 	Time     string `json:"time"`
-	Type     int    `json:"type"`
+	Type     uint   `json:"type"`
 }
 
 type User struct {

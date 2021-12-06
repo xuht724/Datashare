@@ -10,6 +10,7 @@ import (
 	"goProject/models/user"
 	"io/ioutil"
 	"os"
+	"strconv"
 	"time"
 
 	"github.com/beego/beego/v2/server/web/context"
@@ -34,13 +35,29 @@ func UploadFile(ctx *context.Context) {
 		fmt.Printf("Upload file response: %v\n", tool.ToJSONString(body))
 	})(ctx)
 
-	// 接收文件
+	// 解析表单
 	ctx.Request.ParseForm()
+
+	// 获取 type 值
+	var uploadFileTypeString = ctx.Request.FormValue("type") // 获取类型值
+	var uploadFileType = DefaultFileType
+
+	if uploadFileTypeString != "" {
+		if typeTmp, err := strconv.Atoi(uploadFileTypeString); err != nil {
+			panic(err)
+		} else {
+			uploadFileType = uint(typeTmp)
+		}
+	}
+	fmt.Println("Upload file type: ", uploadFileType)
+
+	// 接收文件
 	file, handler, _ := ctx.Request.FormFile("file")
 	var filestream, _ = ioutil.ReadAll(file)
 
 	// 转存到本地
 	var path = user.Conf.FilePath + handler.Filename
+	fmt.Println("filepath: ", path)
 	ioutil.WriteFile(path, filestream, 0777)
 
 	defer os.Remove(path) // 后端记得删除文件
@@ -67,6 +84,7 @@ func UploadFile(ctx *context.Context) {
 		Md5:      uploadResult.Md5,
 		Filename: handler.Filename,
 		Time:     fmt.Sprint(time.Now().Unix()),
+		Type:     uploadFileType,
 	}
 
 	// 判断文件是否是更新
@@ -91,16 +109,46 @@ func UploadFile(ctx *context.Context) {
 }
 
 /*
+获取 uint 类型的 query 参数
+
+param:
+	ctx *context.Context 上下文
+	queryName string 参数名
+	queryDefaultValue 默认值
+
+return:
+	uint
+*/
+func GetUIntQueryParam(ctx *context.Context, queryName string, queryDefaultValue uint) uint {
+	var queryValueString = ctx.Input.Query(queryName)
+	var queryValue = queryDefaultValue
+
+	if queryValueString != "" {
+		if valueTmp, err := strconv.Atoi(queryValueString); err != nil {
+			panic(err)
+		} else {
+			queryValue = uint(valueTmp)
+		}
+	}
+
+	return queryValue
+}
+
+/*
 获取当前账户在存储服务器上存储了的数据集的值
 */
 func GetDataNum(ctx *context.Context) {
+	var dataType = GetUIntQueryParam(ctx, "type", DefaultFileType)
+	fmt.Println("GET /dataNum dataType: ", dataType)
+
+	// 加载用户文件
 	tool.LoadJson(user.UserFile, &user.UserInfo)
 
 	var body = GetDataNumResponseBody{
-		DataNum: uint(len(user.UserInfo.Data)),
+		DataNum: user.UserInfo.GetDataNumByType(dataType),
 	}
 
-	var responseBody, err = json.Marshal(body)
+	responseBody, err := json.Marshal(body)
 	if err != nil {
 		panic(err)
 	}
@@ -113,11 +161,15 @@ func GetDataNum(ctx *context.Context) {
 获取当前账户在存储服务器上存储了的数据集的列表
 */
 func GetDataList(ctx *context.Context) {
+	// 获取 type 参数
+	var dataType = GetUIntQueryParam(ctx, "type", DefaultFileType)
+	fmt.Println("GET /datalist dataType: ", dataType)
+
 	tool.LoadJson(user.UserFile, &user.UserInfo)
 
 	var body = GetDataListResponseBody{
 		State: true,
-		Data:  DataList(user.UserInfo.Data),
+		Data:  DataList(user.UserInfo.GetDataByType(dataType)),
 	}
 
 	if err := tool.SendJsonResponse(ctx, body); err != nil {

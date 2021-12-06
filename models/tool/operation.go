@@ -9,6 +9,16 @@ import (
 	"github.com/beego/beego/v2/server/web/context"
 )
 
+/*
+获取 body 中的参数
+
+param:
+	ctx *context.Context 上下文
+	body interface{} 相关格式
+
+return:
+	error
+*/
 func Param(ctx *context.Context, body interface{}) error {
 	var error = json.Unmarshal(ctx.Input.RequestBody, &body)
 

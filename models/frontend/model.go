@@ -18,13 +18,17 @@ type GetDownloadRequestBody struct {
 	Target  int    `json:"target"`
 	Id      string `json:"id"` // 即 md5
 	IP      string `json:"ip"`
-	Type    int    `json:"type"`
+	Type    uint   `json:"type"`
 }
 
 type GetDownloadResponseBody struct {
 	Filename string `json:"filename"`
 	URL      string `json:"url"`
 	Md5      string `json:"md5"`
+}
+
+type UploadFileRequest struct {
+	Type uint `json:"type"`
 }
 
 type UploadToDfsResult struct {
@@ -36,3 +40,5 @@ type UploadToDfsResult struct {
 type DeleteRequestBody struct {
 	Md5 string `json:"md5"`
 }
+
+const DefaultFileType uint = 1

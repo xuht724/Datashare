@@ -8,7 +8,7 @@ type VerifyRequestBody struct {
 	Address string `json:"address"`
 	Target  int    `json:"target"`
 	Ip      string `json:"ip"`
-	Type    int    `json:"type"`
+	Type    uint   `json:"type"`
 }
 
 type AddLogRequestBody struct {
