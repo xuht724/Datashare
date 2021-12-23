@@ -56,7 +56,7 @@ returns:
 */
 func AddLog(blockchainURL string, address string, target int, ip string, time string) AddLogResult {
 	var response AddLogResult
-	var request = httplib.Post(blockchainURL + "/addLog")
+	var request = httplib.Post(blockchainURL + "/log/public")
 	var body = AddLogRequestBody{
 		Address: address,
 		Target:  target,
