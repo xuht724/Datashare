@@ -208,7 +208,7 @@ func GetDownloadURL(ctx *context.Context) {
 	fmt.Printf("Get download url response: %v", tool.ToJSONString(responseBody))
 
 	// 进行日志上传
-	if !(requestBody.Type == 1) {
+	if requestBody.Type == 1 {
 		blockchain.AddLog(user.Conf.BlockchainURL, requestBody.Address, requestBody.Target, requestBody.IP, fmt.Sprint((time.Now().Unix())))
 	}
 
@@ -241,7 +241,7 @@ func Download(ctx *context.Context) {
 		defer os.Remove(fileURL)
 
 		// 进行日志上传
-		if !(requestBody.Type == 1) {
+		if requestBody.Type == 1 {
 			blockchain.AddLog(user.Conf.BlockchainURL, requestBody.Address, requestBody.Target, requestBody.IP, fmt.Sprint((time.Now().Unix())))
 		}
 
