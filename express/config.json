@@ -1,0 +1,1569 @@
+{
+    "port": 12345,
+
+    "hostAddress": "0x9f3ca236fe5903ad64ffdbbca0e1ad70ed66646b",
+
+    "identityAddress": "0x278c3D82ff9040af979Ed6818d7a56a5bb716990",
+
+    "datacontrolAddress": "0x9FbaABD981Ba91a6ab017bFe5250E59dD073543E",
+
+    "categoryAddress": "0x4a22EDB8e2d51224561A741d590a1E0A11DB03B9",
+
+    "logAddress": "0xe1024F2B8e77b282B353D1Da235aded206fC7e8d",
+
+    "assessmentAddress":"0x38E02C6A47434C9798Bcfef3f7b9ED978Cc7007A",
+
+    "datacontrolAbi": [
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "_identityControl",
+                        "type": "address"
+                    }
+                ],
+                "stateMutability": "nonpayable",
+                "type": "constructor"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "internalType": "string",
+                        "name": "functionName",
+                        "type": "string"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "bool",
+                        "name": "state",
+                        "type": "bool"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "string",
+                        "name": "description",
+                        "type": "string"
+                    }
+                ],
+                "name": "functionState",
+                "type": "event"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "Datalist",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "Modellist",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "Resultlist",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_serialNum",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "buyData",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_serialNum",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "deleteFile",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_serialNum",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "finishModel",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "_addr",
+                        "type": "address"
+                    }
+                ],
+                "name": "getBuylist",
+                "outputs": [
+                    {
+                        "internalType": "uint256[]",
+                        "name": "",
+                        "type": "uint256[]"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_serialNum",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "getDataInf",
+                "outputs": [
+                    {
+                        "components": [
+                            {
+                                "internalType": "uint256",
+                                "name": "serialNum",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "address",
+                                "name": "ownerAddress",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "ownerName",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "id",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "name",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "timestamp",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "point",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "category",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "description",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "bool",
+                                "name": "isOpen",
+                                "type": "bool"
+                            },
+                            {
+                                "internalType": "bool",
+                                "name": "isUsed",
+                                "type": "bool"
+                            }
+                        ],
+                        "internalType": "struct Data.data",
+                        "name": "",
+                        "type": "tuple"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "getDatalist",
+                "outputs": [
+                    {
+                        "internalType": "uint256[]",
+                        "name": "",
+                        "type": "uint256[]"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_serialNum",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "getModelInf",
+                "outputs": [
+                    {
+                        "components": [
+                            {
+                                "internalType": "uint256",
+                                "name": "serialNum",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "address",
+                                "name": "ownerAddress",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "ownerName",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "id",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "name",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "timestamp",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "category",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "description",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "uint256[]",
+                                "name": "dataSets",
+                                "type": "uint256[]"
+                            },
+                            {
+                                "internalType": "bool",
+                                "name": "isFinished",
+                                "type": "bool"
+                            },
+                            {
+                                "internalType": "bool",
+                                "name": "isUsed",
+                                "type": "bool"
+                            }
+                        ],
+                        "internalType": "struct Data.model",
+                        "name": "",
+                        "type": "tuple"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "getModellist",
+                "outputs": [
+                    {
+                        "internalType": "uint256[]",
+                        "name": "",
+                        "type": "uint256[]"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_serialNum",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "getOwnerAddress",
+                "outputs": [
+                    {
+                        "internalType": "address",
+                        "name": "",
+                        "type": "address"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "getResultlist",
+                "outputs": [
+                    {
+                        "internalType": "uint256[]",
+                        "name": "",
+                        "type": "uint256[]"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_serialNum",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "getTaskInf",
+                "outputs": [
+                    {
+                        "components": [
+                            {
+                                "internalType": "uint256",
+                                "name": "serialNum",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "address",
+                                "name": "ownerAddress",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "ownerNamename",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "id",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "name",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "timestamp",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "parentData",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "parentModel",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "bool",
+                                "name": "isUsed",
+                                "type": "bool"
+                            }
+                        ],
+                        "internalType": "struct Data.result",
+                        "name": "",
+                        "type": "tuple"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "_addr",
+                        "type": "address"
+                    }
+                ],
+                "name": "getownerList",
+                "outputs": [
+                    {
+                        "internalType": "uint256[]",
+                        "name": "",
+                        "type": "uint256[]"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_serialNum",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "isOpen",
+                "outputs": [
+                    {
+                        "internalType": "bool",
+                        "name": "",
+                        "type": "bool"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_serialNum",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "isUsed",
+                "outputs": [
+                    {
+                        "internalType": "bool",
+                        "name": "",
+                        "type": "bool"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_serialNum",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "modelOfdata",
+                "outputs": [
+                    {
+                        "internalType": "uint256[]",
+                        "name": "",
+                        "type": "uint256[]"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "num",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_serialNum",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "resultOfmodel",
+                "outputs": [
+                    {
+                        "internalType": "uint256[]",
+                        "name": "",
+                        "type": "uint256[]"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_serialNum",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "typeConfirm",
+                "outputs": [
+                    {
+                        "internalType": "uint8",
+                        "name": "",
+                        "type": "uint8"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "string",
+                        "name": "_id",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "_name",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "_timestamp",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "_category",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "_point",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "_description",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "_isOpen",
+                        "type": "bool"
+                    }
+                ],
+                "name": "uploadData",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "string",
+                        "name": "_id",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "_name",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "_timestamp",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "_category",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "_description",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "uint256[]",
+                        "name": "_dataSets",
+                        "type": "uint256[]"
+                    }
+                ],
+                "name": "uploadModel",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "string",
+                        "name": "_id",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "_name",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "_timestamp",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "_parentData",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "_parentModel",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "uploadResult",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_serialNum",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "verifyModel",
+                "outputs": [
+                    {
+                        "internalType": "uint256[]",
+                        "name": "",
+                        "type": "uint256[]"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "_addr",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "_serialNum",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "verifyResult",
+                "outputs": [
+                    {
+                        "internalType": "bool",
+                        "name": "",
+                        "type": "bool"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            }
+        ],
+    
+    "identityAbi": [
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "_addr",
+                        "type": "address"
+                    }
+                ],
+                "stateMutability": "nonpayable",
+                "type": "constructor"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "_add",
+                        "type": "address"
+                    }
+                ],
+                "name": "changeData",
+                "outputs": [
+                    {
+                        "internalType": "bool",
+                        "name": "",
+                        "type": "bool"
+                    }
+                ],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "string",
+                        "name": "_name",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "_ip",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "_port",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "changeIdentity",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "_add",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "_points",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "charge",
+                "outputs": [
+                    {
+                        "internalType": "bool",
+                        "name": "",
+                        "type": "bool"
+                    }
+                ],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "dataAddress",
+                "outputs": [
+                    {
+                        "internalType": "address",
+                        "name": "",
+                        "type": "address"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "_add",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "_point",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "earnPoints",
+                "outputs": [
+                    {
+                        "internalType": "bool",
+                        "name": "",
+                        "type": "bool"
+                    }
+                ],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "_add",
+                        "type": "address"
+                    }
+                ],
+                "name": "getIdentity",
+                "outputs": [
+                    {
+                        "components": [
+                            {
+                                "internalType": "string",
+                                "name": "name",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "ip",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "port",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "bool",
+                                "name": "isUsed",
+                                "type": "bool"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "points",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "bool",
+                                "name": "isSuper",
+                                "type": "bool"
+                            }
+                        ],
+                        "internalType": "struct IdentityControl.identity",
+                        "name": "",
+                        "type": "tuple"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "_add",
+                        "type": "address"
+                    }
+                ],
+                "name": "getIp",
+                "outputs": [
+                    {
+                        "internalType": "string",
+                        "name": "",
+                        "type": "string"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "_add",
+                        "type": "address"
+                    }
+                ],
+                "name": "getName",
+                "outputs": [
+                    {
+                        "internalType": "string",
+                        "name": "",
+                        "type": "string"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "_add",
+                        "type": "address"
+                    }
+                ],
+                "name": "getPort",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "_add",
+                        "type": "address"
+                    }
+                ],
+                "name": "getUrl",
+                "outputs": [
+                    {
+                        "internalType": "string",
+                        "name": "",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "_add",
+                        "type": "address"
+                    }
+                ],
+                "name": "isRegister",
+                "outputs": [
+                    {
+                        "internalType": "bool",
+                        "name": "",
+                        "type": "bool"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "publicList",
+                "outputs": [
+                    {
+                        "internalType": "address",
+                        "name": "addr",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "name",
+                        "type": "string"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "string",
+                        "name": "_name",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "_ip",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "_port",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "register",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "superAddress",
+                "outputs": [
+                    {
+                        "internalType": "address",
+                        "name": "",
+                        "type": "address"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "transactionsInfo",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "timestamp",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "points",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "enum IdentityControl.TransactionType",
+                        "name": "transactionType",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "identityAddress",
+                        "type": "address"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "_add",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "_point",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "usePoints",
+                "outputs": [
+                    {
+                        "internalType": "bool",
+                        "name": "",
+                        "type": "bool"
+                    }
+                ],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "users",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            }
+        ],
+
+    "logAbi": [
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "_data",
+                        "type": "address"
+                    }
+                ],
+                "stateMutability": "nonpayable",
+                "type": "constructor"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "internalType": "string",
+                        "name": "functionName",
+                        "type": "string"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "bool",
+                        "name": "state",
+                        "type": "bool"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "string",
+                        "name": "description",
+                        "type": "string"
+                    }
+                ],
+                "name": "functionState",
+                "type": "event"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_serialNum",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "getModelLog",
+                "outputs": [
+                    {
+                        "components": [
+                            {
+                                "internalType": "uint256",
+                                "name": "serialNum",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "timestamp",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "string[]",
+                                "name": "participant",
+                                "type": "string[]"
+                            }
+                        ],
+                        "internalType": "struct Log.modelLog",
+                        "name": "",
+                        "type": "tuple"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_serialNum",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "getdataLogs",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    },
+                    {
+                        "components": [
+                            {
+                                "internalType": "uint256",
+                                "name": "serialNum",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "address",
+                                "name": "sender",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "name",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "ip",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "time",
+                                "type": "string"
+                            }
+                        ],
+                        "internalType": "struct Log.dataLog[]",
+                        "name": "",
+                        "type": "tuple[]"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_serialNum",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "_sender",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "_ip",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "_time",
+                        "type": "string"
+                    }
+                ],
+                "name": "uploaddataLog",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_serialNum",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "_timestamp",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string[]",
+                        "name": "_participant",
+                        "type": "string[]"
+                    }
+                ],
+                "name": "uploadmodelLog",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            }
+        ],
+
+    "assessmentAbi": [
+            {
+                "inputs": [
+                    {
+                        "internalType": "address",
+                        "name": "_data",
+                        "type": "address"
+                    }
+                ],
+                "stateMutability": "nonpayable",
+                "type": "constructor"
+            },
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "internalType": "string",
+                        "name": "functionName",
+                        "type": "string"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "bool",
+                        "name": "state",
+                        "type": "bool"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "string",
+                        "name": "description",
+                        "type": "string"
+                    }
+                ],
+                "name": "functionState",
+                "type": "event"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_serialNum",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "getDataAssess",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    },
+                    {
+                        "components": [
+                            {
+                                "internalType": "string",
+                                "name": "name",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "metric",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "value",
+                                "type": "string"
+                            }
+                        ],
+                        "internalType": "struct Assessment.dataAssess[]",
+                        "name": "",
+                        "type": "tuple[]"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_serialNum",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "getModelAssess",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    },
+                    {
+                        "components": [
+                            {
+                                "internalType": "string",
+                                "name": "name",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "metric",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "value",
+                                "type": "string"
+                            }
+                        ],
+                        "internalType": "struct Assessment.modelAssess[]",
+                        "name": "",
+                        "type": "tuple[]"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_serialNum",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "_name",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "_metric",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "_value",
+                        "type": "string"
+                    }
+                ],
+                "name": "uploadDataAssess",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_serialNum",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "_name",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "_metric",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "_value",
+                        "type": "string"
+                    }
+                ],
+                "name": "uploadModelAssess",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            }
+        ],
+
+    "categoryAbi": [
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "internalType": "string",
+                        "name": "functionName",
+                        "type": "string"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "bool",
+                        "name": "state",
+                        "type": "bool"
+                    },
+                    {
+                        "indexed": false,
+                        "internalType": "string",
+                        "name": "description",
+                        "type": "string"
+                    }
+                ],
+                "name": "functionState",
+                "type": "event"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "_serialNum",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "getCategory",
+                "outputs": [
+                    {
+                        "internalType": "string",
+                        "name": "",
+                        "type": "string"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "getCategoryList",
+                "outputs": [
+                    {
+                        "internalType": "string[]",
+                        "name": "",
+                        "type": "string[]"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "num",
+                "outputs": [
+                    {
+                        "internalType": "uint256",
+                        "name": "",
+                        "type": "uint256"
+                    }
+                ],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [
+                    {
+                        "internalType": "string",
+                        "name": "_name",
+                        "type": "string"
+                    }
+                ],
+                "name": "uploadCategory",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            }
+        ]
+
+}
