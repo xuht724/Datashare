@@ -54,11 +54,13 @@ express
 
 #### Eth client
 
-本次使用的是Geth客户端，目前项目处于Dev环境下进行测试。启动客户端的命令：
+本次使用的是Geth客户端，目前项目处于Dev环境下进行测试。运行的客户端需要安装好geth。eth文件夹中存放了当前开发使用的链的数据。启动客户端的命令：
 
 ```bash
 geth --datadir devdata --allow-insecure-unlock --http --dev --http.corsdomain "*" console 2>>devgeth.log
 ```
+
+可以直接 `bash devstart.sh`
 
 #### Contract
 
@@ -75,6 +77,8 @@ Assessment合约：评估合约，用来记录评估数据集、模型的metric�
 Category合约：类别合约。功能为将数据集进行分类。
 
 Log合约：日志合约。目前实现为针对数据文件，记录下载请求；针对模型文件，记录参与计算用户。
+
+
 
 
 
