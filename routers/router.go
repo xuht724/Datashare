@@ -22,6 +22,9 @@ func init() {
 	beego.Post("/file", uploadFile)
 
 	beego.Delete("/delete", delete)
+
+	beego.Delete("/reset", reset)
+
 }
 
 func delete(ctx *context.Context) {
@@ -47,4 +50,8 @@ func getDownloadURL(ctx *context.Context) {
 
 func download(ctx *context.Context) {
 	frontend.Download(ctx)
+}
+
+func reset(ctx *context.Context) {
+	frontend.Reset(ctx)
 }

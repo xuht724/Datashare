@@ -286,3 +286,28 @@ func Delete(ctx *context.Context) {
 	}
 
 }
+
+/*
+清空文件
+*/
+func Reset(ctx *context.Context) {
+	var responses []goFastdfs.DeleteResult // 所有的结果全部以数组格式返回
+	defer tool.DeferSendJsonResponse(ctx, responses)
+
+	for _, elem := range user.UserInfo.Data {
+		var response = goFastdfs.DeleteOneFile(user.Conf.DfsURL, elem.Md5)
+
+		if response.Status != "ok" { // 如果在 dfs 删除失败
+			response.Message = string(elem.Md5) + ": " + "fail to delete file in dfs"
+
+		}
+		responses = append(responses, response) // 将所有的结果保存
+	}
+
+	user.UserInfo.Data = []user.Data{} // 直接清空数组
+
+	// 保存 user 的数据
+	if err := tool.SaveJSON(user.UserFile, user.UserInfo); err != nil {
+		panic(err)
+	}
+}
