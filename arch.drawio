@@ -1,0 +1,49 @@
+<mxfile host="65bd71144e">
+    <diagram id="1JWv5kw_mscpKJLDVU6d" name="第 1 页">
+        <mxGraphModel dx="331" dy="200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="413" pageHeight="291" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="basWFBgLzItUuF2azbGd-35" value="" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 2;sketch=0;strokeWidth=3;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="670" width="600" height="450" as="geometry"/>
+                </mxCell>
+                <mxCell id="basWFBgLzItUuF2azbGd-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="basWFBgLzItUuF2azbGd-2" target="basWFBgLzItUuF2azbGd-13" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="basWFBgLzItUuF2azbGd-2" value="通用网关接口" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="910" width="160" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="basWFBgLzItUuF2azbGd-3" value="GET /dataNum&#10;GET /datalist&#10;&#10;POST /download&#10;POST /downloadURL&#10;POST /file&#10;&#10;DELETE /delete&#10;DELETE /reset" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="basWFBgLzItUuF2azbGd-2" vertex="1">
+                    <mxGeometry y="30" width="160" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="basWFBgLzItUuF2azbGd-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=block;startFill=0;endArrow=block;endFill=1;shape=flexArrow;" parent="1" source="basWFBgLzItUuF2azbGd-10" target="basWFBgLzItUuF2azbGd-3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="basWFBgLzItUuF2azbGd-10" value="前端" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="980" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="basWFBgLzItUuF2azbGd-13" value="储存服务（gofastdfs）" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="740" width="160" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="basWFBgLzItUuF2azbGd-14" value="GET /stat&#10;GET /get_file_info&#10;GET /?dir={dirName}&#10;&#10;POST /upload&#10;&#10;DELETE /delete" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="basWFBgLzItUuF2azbGd-13" vertex="1">
+                    <mxGeometry y="30" width="160" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="basWFBgLzItUuF2azbGd-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="basWFBgLzItUuF2azbGd-14" target="basWFBgLzItUuF2azbGd-2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="basWFBgLzItUuF2azbGd-20" value="后端" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=1;align=center;sketch=0;fillColor=none;dashPattern=1 2;" parent="1" vertex="1">
+                    <mxGeometry x="250" y="690" width="220" height="410" as="geometry"/>
+                </mxCell>
+                <mxCell id="basWFBgLzItUuF2azbGd-32" value="链端" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;dashPattern=1 2;sketch=0;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="510" y="957.5" width="160" height="122.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="basWFBgLzItUuF2azbGd-33" value="GET /log/public&#10;GET /getLogs&#10;&#10;POST /verify&#10;......" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;dashed=1;dashPattern=1 2;sketch=0;" parent="basWFBgLzItUuF2azbGd-32" vertex="1">
+                    <mxGeometry y="30" width="160" height="92.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="basWFBgLzItUuF2azbGd-34" style="edgeStyle=orthogonalEdgeStyle;shape=flexArrow;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;startArrow=block;startFill=0;endArrow=block;endFill=1;" parent="1" source="basWFBgLzItUuF2azbGd-33" target="basWFBgLzItUuF2azbGd-3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
