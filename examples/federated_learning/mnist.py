@@ -55,23 +55,3 @@ class LitAutoEncoder(pl.LightningModule):
         loss = F.mse_loss(x_hat, x)
         if stage:
             self.log(f"{stage}_loss", loss, prog_bar=True)
-
-def main() -> None:
-    """Centralized training."""
-
-    # Load data
-    train_loader, val_loader, test_loader = load_data()
-
-    # Load model
-    model = LitAutoEncoder()
-
-    # Train
-    trainer = pl.Trainer(max_epochs=5, progress_bar_refresh_rate=0)
-    trainer.fit(model, train_loader, val_loader)
-
-    # Test
-    trainer.test(model, test_loader)
-
-
-if __name__ == "__main__":
-    main()

@@ -13,15 +13,17 @@ def list_all_parameters(path):
         if os.path.isdir(os.path.join(path,file)):
             parameters_list += list_all_parameters(os.path.join(path,file))
         else:
-            if file.find("parameters") != -1:
-                parameters = np.load(os.path.join(path,file)).tolist()
+            if file.find("parameters.npy") != -1:
+                parameters = np.load(os.path.join(path,file), allow_pickle=True).tolist()
                 parameters_list.append(parameters)
     return parameters_list
 
 def fedavg(parameters_list):
     if len(parameters_list) <= 0:
         error("no client parameters!!!")
-    avg = np.divide(np.sum(parameters_list,0), len(parameters_list))
+    list = np.array(parameters_list, dtype=object)
+    sum = np.sum(list,0)
+    avg = np.divide(sum, len(list))
     return avg.tolist()
 
 def main() -> None:
@@ -42,7 +44,7 @@ def main() -> None:
     avg_parameters = fedavg(parameters_list)
 
     # save
-    np.save(dir+'parameters'.format(args.clientID), np.array(avg_parameters))
+    np.save(dir+'parameters.npy', np.array(avg_parameters, dtype=object))
 
 if __name__ == "__main__":
     main()
