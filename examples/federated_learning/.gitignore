@@ -1,0 +1,10 @@
+# dataset
+MNIST/
+
+# virtual environment
+venv/
+
+# temp file
+__pycache__/
+lightning_logs/
+results/
