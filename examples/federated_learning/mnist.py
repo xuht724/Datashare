@@ -3,12 +3,13 @@
 Source: https://pytorchlightning.ai/ (2021/02/04)
 """
 
+import numpy as np
+from collections import OrderedDict
 
 import torch
 from torch import nn
 from torch.nn import functional as F
 import pytorch_lightning as pl
-
 
 class LitAutoEncoder(pl.LightningModule):
     def __init__(self):
@@ -55,3 +56,30 @@ class LitAutoEncoder(pl.LightningModule):
         loss = F.mse_loss(x_hat, x)
         if stage:
             self.log(f"{stage}_loss", loss, prog_bar=True)
+
+def load_parameters(parameters_path):
+    try:
+        parameters = np.load(parameters_path, allow_pickle=True).tolist()
+        return parameters
+    except OSError:
+        return None
+
+def save_parameters(parameters_path, parameters):
+    np.save(parameters_path, np.array(parameters, dtype=object))
+
+def get_parameters(model):
+    def _get_parameters(m):
+        return [val.cpu().numpy() for _, val in m.state_dict().items()]
+    encoder_params = _get_parameters(model.encoder)
+    decoder_params = _get_parameters(model.decoder)
+    return encoder_params + decoder_params
+
+def set_parameters(model, parameters):
+    def _set_parameters(m, p):
+        params_dict = zip(m.state_dict().keys(), p)
+        state_dict = OrderedDict({k: torch.tensor(v) for k, v in params_dict})
+        m.load_state_dict(state_dict, strict=True)
+
+    if parameters != None:
+        _set_parameters(model.encoder, parameters[:4])
+        _set_parameters(model.decoder, parameters[4:])
