@@ -11,6 +11,7 @@
         - [面向前端的接口](#面向前端的接口)
         - [面向储存的接口](#面向储存的接口)
         - [面向链端的接口](#面向链端的接口)
+      - [运行](#运行)
 
 ## 项目简介
 
@@ -193,3 +194,15 @@ func AddLog(blockchainURL string, address string, target int, ip string, time st
 // 获取链端的日志
 func GetLogs(blockchainURL string, serialNum int) GetLogsResult
 ```
+
+#### 运行
+
+- go 语言版本为 `go version go1.17.3 windows/amd64`
+- beego 版本为 `v2.0.2`
+
+进入项目目录后，直接运行 `bee run`
+
+第一次运行会新建两个 `json` 文件：
+
+- `config.json` 主要储存链端、储存服务和文件储存的 URL 和路径
+- `user.json` 本地储存用户信息
